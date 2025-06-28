@@ -1,6 +1,6 @@
-本项目为一个基于qt与linux的嵌入式车载系统，仍在更新中
-目前已完成的功能如下：
-1.主页功能
-mplayer播放模块
-天气模块（温度、天气）
+本项目为一个基于qt与linux的嵌入式车载系统，仍在更新中  
+目前已完成的功能如下：  
+1.主页功能  
+mplayer播放模块  
+天气模块（温度、天气）  
 ![5cd49a8b4caf6c6496503f84002d5b3](https://github.com/user-attachments/assets/13df9ec5-7db6-4414-b35d-20f4f6886b6d)
