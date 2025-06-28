@@ -1,0 +1,43 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>img/black.jpg</file>
+        <file>img/map1.png</file>
+        <file>img/daoche.png</file>
+        <file>img/music.png</file>
+        <file>img/setting.png</file>
+        <file>img/video.png</file>
+        <file>img/weather.png</file>
+        <file>img/set.png</file>
+        <file>img/app_back.jpg</file>
+        <file>img/left_song.png</file>
+        <file>img/music_start.png</file>
+        <file>img/right_song.png</file>
+        <file>img/zhuanji.jpg</file>
+        <file>img/volume.png</file>
+        <file>img/pause.png</file>
+        <file>img/bluetooth.png</file>
+        <file>img/WIFI.png</file>
+        <file>img/cloudy_sun.png</file>
+        <file>img/gray.jpg</file>
+        <file>img/sun.png</file>
+        <file>img/leaf.png</file>
+        <file>img/sun_small.png</file>
+        <file>img/car_logo.png</file>
+        <file>img/battery.png</file>
+        <file>img/airQuity.png</file>
+        <file>img/clouds_storm.png</file>
+        <file>img/eastWind.png</file>
+        <file>img/PM25.png</file>
+        <file>img/search.png</file>
+        <file>img/sunset.png</file>
+        <file>img/tempature.png</file>
+        <file>img/dayu.png</file>
+        <file>img/duoyun.png</file>
+        <file>img/qing.png</file>
+        <file>img/xiaoyu.png</file>
+        <file>img/yin.png</file>
+        <file>img/zhonyu.png</file>
+        <file>img/triangle.png</file>
+        <file>img/home.png</file>
+    </qresource>
+</RCC>
