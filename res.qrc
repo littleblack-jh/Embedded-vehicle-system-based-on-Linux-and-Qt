@@ -39,5 +39,8 @@
         <file>img/zhonyu.png</file>
         <file>img/triangle.png</file>
         <file>img/home.png</file>
+        <file>img/zoom_down.png</file>
+        <file>img/zoom_up.png</file>
+        <file>img/map_default.png</file>
     </qresource>
 </RCC>

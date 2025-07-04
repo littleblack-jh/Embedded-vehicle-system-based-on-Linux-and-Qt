@@ -52,8 +52,8 @@ public:
     QLabel *label_windlevel;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_3date;
-    QLabel *label_temperedge_2;
-    QLabel *label_temperedge_3;
+    QLabel *label_date;
+    QLabel *label_day;
     QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout_city;
     QLabel *label_city;
@@ -277,26 +277,26 @@ public:
         verticalLayout_3date = new QVBoxLayout(layoutWidget);
         verticalLayout_3date->setObjectName("verticalLayout_3date");
         verticalLayout_3date->setContentsMargins(0, 0, 0, 0);
-        label_temperedge_2 = new QLabel(layoutWidget);
-        label_temperedge_2->setObjectName("label_temperedge_2");
-        label_temperedge_2->setMinimumSize(QSize(80, 20));
-        label_temperedge_2->setMaximumSize(QSize(200, 20));
-        label_temperedge_2->setFont(font);
-        label_temperedge_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label_date = new QLabel(layoutWidget);
+        label_date->setObjectName("label_date");
+        label_date->setMinimumSize(QSize(80, 20));
+        label_date->setMaximumSize(QSize(200, 20));
+        label_date->setFont(font);
+        label_date->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        verticalLayout_3date->addWidget(label_temperedge_2);
+        verticalLayout_3date->addWidget(label_date);
 
-        label_temperedge_3 = new QLabel(layoutWidget);
-        label_temperedge_3->setObjectName("label_temperedge_3");
-        label_temperedge_3->setMinimumSize(QSize(80, 20));
-        label_temperedge_3->setMaximumSize(QSize(200, 20));
+        label_day = new QLabel(layoutWidget);
+        label_day->setObjectName("label_day");
+        label_day->setMinimumSize(QSize(80, 20));
+        label_day->setMaximumSize(QSize(200, 20));
         QFont font1;
         font1.setPointSize(11);
         font1.setBold(true);
-        label_temperedge_3->setFont(font1);
-        label_temperedge_3->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label_day->setFont(font1);
+        label_day->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        verticalLayout_3date->addWidget(label_temperedge_3);
+        verticalLayout_3date->addWidget(label_day);
 
         layoutWidget1 = new QWidget(WidgetWeather);
         layoutWidget1->setObjectName("layoutWidget1");
@@ -728,8 +728,8 @@ public:
         label_2->setText(QString());
         label_windtype->setText(QCoreApplication::translate("Weather", "\344\270\234\345\215\227\351\243\216", nullptr));
         label_windlevel->setText(QCoreApplication::translate("Weather", "2\347\272\247", nullptr));
-        label_temperedge_2->setText(QCoreApplication::translate("Weather", "2025-06-07", nullptr));
-        label_temperedge_3->setText(QCoreApplication::translate("Weather", "\346\230\237\346\234\237\345\205\255", nullptr));
+        label_date->setText(QCoreApplication::translate("Weather", "2025-06-07", nullptr));
+        label_day->setText(QCoreApplication::translate("Weather", "\346\230\237\346\234\237\345\205\255", nullptr));
         label_city->setText(QCoreApplication::translate("Weather", "\351\235\222\345\262\233", nullptr));
         label_temperture->setText(QCoreApplication::translate("Weather", "26", nullptr));
         label_temperedge->setText(QCoreApplication::translate("Weather", "29\302\260/21\302\260", nullptr));

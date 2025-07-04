@@ -359,7 +359,7 @@ border-radius: 10px;</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3date">
       <item>
-       <widget class="QLabel" name="label_temperedge_2">
+       <widget class="QLabel" name="label_date">
         <property name="minimumSize">
          <size>
           <width>80</width>
@@ -387,7 +387,7 @@ border-radius: 10px;</string>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_temperedge_3">
+       <widget class="QLabel" name="label_day">
         <property name="minimumSize">
          <size>
           <width>80</width>

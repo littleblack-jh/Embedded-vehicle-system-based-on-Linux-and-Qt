@@ -11,14 +11,17 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    map.cpp \
     weather.cpp
 
 HEADERS += \
     mainwindow.h \
+    map.h \
     weather.h
 
 FORMS += \
     mainwindow.ui \
+    map.ui \
     weather.ui
 
 # Default rules for deployment.

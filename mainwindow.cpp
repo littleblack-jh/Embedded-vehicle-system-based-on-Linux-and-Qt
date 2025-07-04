@@ -117,11 +117,11 @@ MainWindow::MainWindow(QWidget *parent)
             {
                 time_hour = "00";
             }
-            QString formattedMin = time_min.rightJustified(2, '0');
-            QString formattedHour = time_hour.rightJustified(2, '0');
+            time_min = time_min.rightJustified(2, '0');
+            time_hour = time_hour.rightJustified(2, '0');
 
-            ui->top_label_time->setText(formattedHour + ":" + formattedMin);
-            emit timeUpdated(formattedMin, formattedHour);
+            ui->top_label_time->setText(time_hour + ":" + time_min);
+            emit timeUpdated(time_date,time_min, time_hour);
         }
     });
 
@@ -260,13 +260,14 @@ void MainWindow::NetworkReplyFinied(QNetworkReply *reply)
         qDebug()<<"time start";
         TimeData =  reply->readAll();
         int start = TimeData.indexOf("msg");
-        QString data  = TimeData.mid(start+6, 10);
+        time_date  = TimeData.mid(start+6, 10);
         time_hour = TimeData.mid(start+17, 2);
         time_min = TimeData.mid(start+20, 2);
         time_sec = TimeData.mid(start+23, 2);
+        time_min = time_min.rightJustified(2, '0');
+        time_hour = time_hour.rightJustified(2, '0');
 
-
-        ui->top_label_date->setText(data);
+        ui->top_label_date->setText(time_date);
         ui->top_label_time->setText(time_hour+":"+time_min);
         timer_top->start(1000);
     }
@@ -280,7 +281,7 @@ void MainWindow::NetworkReplyFinied(QNetworkReply *reply)
             qDebug() << "errer:";
             return;
         }
-        QJsonObject objRoot = jsonobj.object();
+        objRoot = jsonobj.object();
         ui->label_city->setText(objRoot["city"].toString());
         QJsonArray WeatherDataArray = objRoot["data"].toArray();
         QString weather = WeatherDataArray[0].toObject()["wea"].toString();
@@ -322,18 +323,39 @@ void MainWindow::on_SongBox_currentTextChanged(const QString &arg1)
     }
 }
 
+MainWindow* MainWindow::Getinstance()
+{
+    static MainWindow *s_instance = nullptr;
+    if (!s_instance)
+    {
+        s_instance = new MainWindow();
+    }
+    return s_instance;
+}
 
+QJsonObject MainWindow::get_weather()
+{
+    return objRoot;
+}
 
 
 
 void MainWindow::on_WeatherButton_clicked()
 {
-    weather = new Weather(this,this);
-    qDebug() << "map";
+    Weather *weather = Weather::Getinstance(this);
+    qDebug() << "weather";
     this->hide();
     weather->show();
-    QString formattedMin = time_min.rightJustified(2, '0');
-    QString formattedHour = time_hour.rightJustified(2, '0');
-    emit timeUpdated(formattedMin, formattedHour);
+    emit timeUpdated(time_date,time_min, time_hour);
+}
+
+
+void MainWindow::on_MapButton_clicked()
+{
+    Map *map = Map::Getinstance(this);
+    qDebug() << "weather";
+    this->hide();
+    map->show();
+    emit timeUpdated(time_date,time_min, time_hour);
 }
 

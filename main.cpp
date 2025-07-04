@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow mainwindow;
-    mainwindow.show();
+    MainWindow *mainwindow = MainWindow::Getinstance();
+    mainwindow->show();
     return a.exec();
 }
