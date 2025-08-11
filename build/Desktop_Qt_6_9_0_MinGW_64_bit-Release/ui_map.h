@@ -30,7 +30,7 @@ public:
     QPushButton *MapButton;
     QPushButton *MusicButton;
     QPushButton *WeatherButton;
-    QPushButton *SetButton;
+    QPushButton *VideoButton;
     QLabel *top_label_date;
     QLabel *label_title;
     QWidget *layoutWidget_2;
@@ -90,13 +90,13 @@ public:
 
         MenuLayout->addWidget(WeatherButton);
 
-        SetButton = new QPushButton(layoutWidget);
-        SetButton->setObjectName("SetButton");
-        SetButton->setMinimumSize(QSize(80, 80));
-        SetButton->setMaximumSize(QSize(80, 80));
-        SetButton->setStyleSheet(QString::fromUtf8("border-image: url(:/images/img/set.png);"));
+        VideoButton = new QPushButton(layoutWidget);
+        VideoButton->setObjectName("VideoButton");
+        VideoButton->setMinimumSize(QSize(80, 80));
+        VideoButton->setMaximumSize(QSize(80, 80));
+        VideoButton->setStyleSheet(QString::fromUtf8("border-image: url(:/images/img/video.png);"));
 
-        MenuLayout->addWidget(SetButton);
+        MenuLayout->addWidget(VideoButton);
 
         top_label_date = new QLabel(centralwidget);
         top_label_date->setObjectName("top_label_date");
@@ -215,7 +215,7 @@ public:
         MapButton->setText(QString());
         MusicButton->setText(QString());
         WeatherButton->setText(QString());
-        SetButton->setText(QString());
+        VideoButton->setText(QString());
         top_label_date->setText(QCoreApplication::translate("Map", "2024.05.10", nullptr));
         label_title->setText(QCoreApplication::translate("Map", "\345\260\217\351\273\221\346\231\272\350\203\275\350\275\246\350\275\275\347\263\273\347\273\237V1.0", nullptr));
         top_label_wifi->setText(QString());

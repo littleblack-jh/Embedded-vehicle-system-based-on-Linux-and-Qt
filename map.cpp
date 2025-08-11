@@ -102,6 +102,7 @@ void Map::on_WeatherButton_clicked()
     qDebug() << "weather";
     this->hide();
     weather->show();
+    emit mainWindow->timeUpdated(time_date,time_min, time_hour);
 }
 void Map::on_MusicButton_clicked()
 {
@@ -124,5 +125,15 @@ void Map::on_zoom_down_clicked()
     if(zoom>3)
         zoom--;
     loadMap(gps_data,zoom);
+}
+
+
+void Map::on_VideoButton_clicked()
+{
+    Video *video = Video::Getinstance(this);
+    qDebug() << "video";
+    this->hide();
+    video->show();
+    emit mainWindow->timeUpdated(time_date,time_min, time_hour);
 }
 

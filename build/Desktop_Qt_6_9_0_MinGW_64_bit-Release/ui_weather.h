@@ -99,7 +99,7 @@ public:
     QPushButton *MapButton;
     QPushButton *MusicButton;
     QPushButton *WeatherButton;
-    QPushButton *SetButton;
+    QPushButton *VideoButton;
     QPushButton *MusicStart_2;
 
     void setupUi(QMainWindow *Weather)
@@ -690,13 +690,13 @@ public:
 
         MenuLayout->addWidget(WeatherButton);
 
-        SetButton = new QPushButton(layoutWidget_2);
-        SetButton->setObjectName("SetButton");
-        SetButton->setMinimumSize(QSize(80, 80));
-        SetButton->setMaximumSize(QSize(80, 80));
-        SetButton->setStyleSheet(QString::fromUtf8("border-image: url(:/images/img/set.png);"));
+        VideoButton = new QPushButton(layoutWidget_2);
+        VideoButton->setObjectName("VideoButton");
+        VideoButton->setMinimumSize(QSize(80, 80));
+        VideoButton->setMaximumSize(QSize(80, 80));
+        VideoButton->setStyleSheet(QString::fromUtf8("border-image: url(:/images/img/video.png);"));
 
-        MenuLayout->addWidget(SetButton);
+        MenuLayout->addWidget(VideoButton);
 
         MusicStart_2 = new QPushButton(centralwidget);
         MusicStart_2->setObjectName("MusicStart_2");
@@ -761,7 +761,7 @@ public:
         MapButton->setText(QString());
         MusicButton->setText(QString());
         WeatherButton->setText(QString());
-        SetButton->setText(QString());
+        VideoButton->setText(QString());
         MusicStart_2->setText(QString());
     } // retranslateUi
 

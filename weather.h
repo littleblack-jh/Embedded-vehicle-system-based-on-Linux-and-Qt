@@ -25,6 +25,8 @@ private slots:
 
     void on_MapButton_clicked();
 
+    void on_VideoButton_clicked();
+
 private:
     Ui::Weather *ui;
     explicit Weather(QWidget *parent = nullptr);

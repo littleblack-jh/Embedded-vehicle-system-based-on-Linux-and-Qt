@@ -139,3 +139,13 @@ void Weather::on_MapButton_clicked()
     emit mainWindow->timeUpdated(time_date,time_min, time_hour);
 }
 
+
+void Weather::on_VideoButton_clicked()
+{
+    Video *video = Video::Getinstance(this);
+    qDebug() << "video";
+    this->hide();
+    video->show();
+    emit mainWindow->timeUpdated(time_date,time_min, time_hour);
+}
+

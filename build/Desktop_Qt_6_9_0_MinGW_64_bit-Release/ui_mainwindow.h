@@ -50,7 +50,7 @@ public:
     QPushButton *MapButton;
     QPushButton *MusicButton;
     QPushButton *WeatherButton;
-    QPushButton *SetButton;
+    QPushButton *VideoButton;
     QLabel *label_title;
     QWidget *layoutWidget3;
     QHBoxLayout *TopLayout;
@@ -290,7 +290,7 @@ public:
         SongBox->setFont(font4);
         SongBox->setStyleSheet(QString::fromUtf8("border-radius:15px;"));
         SongBox->setEditable(true);
-        layoutWidget3->raise();
+        layoutWidget1->raise();
         widget_3->raise();
         VolumeSlider->raise();
         label_lrc->raise();
@@ -335,13 +335,13 @@ public:
 
         MenuLayout->addWidget(WeatherButton);
 
-        SetButton = new QPushButton(layoutWidget2);
-        SetButton->setObjectName("SetButton");
-        SetButton->setMinimumSize(QSize(80, 80));
-        SetButton->setMaximumSize(QSize(80, 80));
-        SetButton->setStyleSheet(QString::fromUtf8("border-image: url(:/images/img/set.png);"));
+        VideoButton = new QPushButton(layoutWidget2);
+        VideoButton->setObjectName("VideoButton");
+        VideoButton->setMinimumSize(QSize(80, 80));
+        VideoButton->setMaximumSize(QSize(80, 80));
+        VideoButton->setStyleSheet(QString::fromUtf8("border-image: url(:/images/img/video.png);"));
 
-        MenuLayout->addWidget(SetButton);
+        MenuLayout->addWidget(VideoButton);
 
         label_title = new QLabel(centralwidget);
         label_title->setObjectName("label_title");
@@ -575,7 +575,7 @@ public:
         MapButton->setText(QString());
         MusicButton->setText(QString());
         WeatherButton->setText(QString());
-        SetButton->setText(QString());
+        VideoButton->setText(QString());
         label_title->setText(QCoreApplication::translate("MainWindow", "\345\260\217\351\273\221\346\231\272\350\203\275\350\275\246\350\275\275\347\263\273\347\273\237V1.0", nullptr));
         top_label_wifi->setText(QString());
         top_label_bluetooth->setText(QString());

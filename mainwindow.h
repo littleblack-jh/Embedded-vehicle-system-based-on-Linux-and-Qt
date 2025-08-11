@@ -18,6 +18,8 @@
 #include <QJsonObject>
 #include "weather.h"
 #include "map.h"
+#include "video.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -52,6 +54,8 @@ private slots:
     void on_WeatherButton_clicked();
 
     void on_MapButton_clicked();
+
+    void on_VideoButton_clicked();
 
 private:
     MainWindow(QWidget *parent = nullptr);

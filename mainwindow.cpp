@@ -4,7 +4,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-
+#include <QDir>
 bool music_playing_flag = 0;
 bool music_start_once = 1;
 
@@ -31,10 +31,25 @@ MainWindow::MainWindow(QWidget *parent)
     connect(weather_manager,&QNetworkAccessManager::finished,this,&MainWindow::NetworkReplyFinied);
     time_url = "http://101.35.2.25/api/time/getapi.php?id=10005315&key=ae919380185402a068438af899ebf350&type=2";
     weather_url = "http://gfeljm.tianqiapi.com/api?unescape=1&version=v9&appid=56886465&appsecret=a4c7hIKT";
-
     time_manager->get(QNetworkRequest(QUrl(time_url)));  // 发起 GET 请求
     weather_manager->get(QNetworkRequest(QUrl(weather_url)));
 
+    // 清空ComboBox当前内容
+    ui->SongBox->clear();
+    // 创建QDir对象并设置路径
+    QDir MuiscDirectory("./music");
+    // 设置名称过滤器，只获取.mp3文件
+    QStringList filters;
+    filters << "*.mp3";
+    MuiscDirectory.setNameFilters(filters);
+    // 获取所有匹配的文件
+    QStringList mp3Files = MuiscDirectory.entryList(QDir::Files);
+    foreach (QString file, mp3Files)
+    {
+        QFileInfo fileInfo(file);
+        // 获取不带后缀的文件名
+        ui->SongBox->addItem(fileInfo.baseName());
+    }
 
 
     this->installEventFilter(this);  // 在窗口类中启用事件过滤
@@ -189,7 +204,7 @@ void MainWindow::on_MusicStart_clicked()
         music_start_once = 0;
         //打开歌词文件
 
-        lrc_file = new QFile(ui->SongBox->currentText()+ ".lrc");
+        lrc_file = new QFile("./music/" + ui->SongBox->currentText()+ ".lrc");
         if(lrc_file->open(QIODevice::ReadWrite))
         {
             qDebug() << "lrc file open success";
@@ -200,7 +215,7 @@ void MainWindow::on_MusicStart_clicked()
             qDebug() << "lrc file open error";
         }
         qDebug("process start");
-        process->start(QString("mplayer -quiet -slave ./%1.mp3").arg(ui->SongBox->currentText()));
+        process->start(QString("mplayer -quiet -slave ./music/%1.mp3").arg(ui->SongBox->currentText()));
         process->write(QString("volume %1 1\n").arg(ui->VolumeSlider->value()).toStdString().c_str());
 
         music_playing_flag = 1;
@@ -356,6 +371,16 @@ void MainWindow::on_MapButton_clicked()
     qDebug() << "weather";
     this->hide();
     map->show();
+    emit timeUpdated(time_date,time_min, time_hour);
+}
+
+
+void MainWindow::on_VideoButton_clicked()
+{
+    Video *video = Video::Getinstance(this);
+    qDebug() << "video";
+    this->hide();
+    video->show();
     emit timeUpdated(time_date,time_min, time_hour);
 }
 

@@ -12,16 +12,19 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     map.cpp \
+    video.cpp \
     weather.cpp
 
 HEADERS += \
     mainwindow.h \
     map.h \
+    video.h \
     weather.h
 
 FORMS += \
     mainwindow.ui \
     map.ui \
+    video.ui \
     weather.ui
 
 # Default rules for deployment.

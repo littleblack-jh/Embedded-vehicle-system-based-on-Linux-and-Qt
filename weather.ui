@@ -1455,7 +1455,7 @@ border-radius: 10px;</string>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="SetButton">
+      <widget class="QPushButton" name="VideoButton">
        <property name="minimumSize">
         <size>
          <width>80</width>
@@ -1469,7 +1469,7 @@ border-radius: 10px;</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">border-image: url(:/images/img/set.png);</string>
+        <string notr="true">border-image: url(:/images/img/video.png);</string>
        </property>
        <property name="text">
         <string/>

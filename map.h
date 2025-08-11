@@ -23,11 +23,11 @@ public:
 private slots:
     void on_WeatherButton_clicked();
     void on_MusicButton_clicked();
-
-
     void on_zoom_up_clicked();
 
     void on_zoom_down_clicked();
+
+    void on_VideoButton_clicked();
 
 private:
     explicit Map(QWidget *parent = nullptr);
